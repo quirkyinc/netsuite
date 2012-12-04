@@ -13,7 +13,7 @@ module NetSuite
         :estimated_total_value, :memo
 
       field :custom_field_list, CustomFieldList
-      field :item_list,         InventoryAdjustmentInventoryList
+      field :inventory_list,    InventoryAdjustmentInventoryList
 
       record_refs :account, :customer, :department, :location, :custom_field_list
 
