@@ -7,7 +7,7 @@ module NetSuite
       def initialize(attributes = {})
         case attributes[:inventory]
         when Hash
-          inventory << CustomerAddressbook.new(attributes[:inventory])
+          inventory << InventoryAdjustmentInventory.new(attributes[:inventory])
         when Array
           attributes[:inventory].each { |inv| inventory << InventoryAdjustmentInventory.new(inv) }
         end
