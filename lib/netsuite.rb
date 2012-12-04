@@ -16,6 +16,7 @@ module NetSuite
     autoload :TranCust,       'netsuite/namespaces/tran_cust'
     autoload :TranGeneral,    'netsuite/namespaces/tran_general'
     autoload :TranSales,      'netsuite/namespaces/tran_sales'
+    autoload :TranInvt,      'netsuite/namespaces/tran_invt'
     autoload :SetupCustom,    'netsuite/namespaces/setup_custom'
   end
 
@@ -62,6 +63,9 @@ module NetSuite
     autoload :CustomerRefundDepositList,  'netsuite/records/customer_refund_deposit_list'
     autoload :Department,                 'netsuite/records/department'
     autoload :Duration,                   'netsuite/records/duration'
+    autoload :InventoryAdjustment,        'netsuite/records/inventory_adjustment'
+    autoload :InventoryAdjustmentInventory,  'netsuite/records/inventory_adjustment_inventory'
+    autoload :InventoryAdjustmentInventoryList,  'netsuite/records/inventory_adjustment_inventory_list'
     autoload :InventoryItem,              'netsuite/records/inventory_item'
     autoload :Invoice,                    'netsuite/records/invoice'
     autoload :InvoiceItem,                'netsuite/records/invoice_item'
