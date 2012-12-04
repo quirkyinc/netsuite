@@ -4,27 +4,21 @@ module NetSuite
       include Support::Fields
       include Namespaces::TranInvt
 
-      fields :line
-
       def initialize(attributes = {})
-        initialize_from_attributes_hash(attributes)
-      end
-
-      def line=(lines)
-        case lines
+        case attributes[:inventory]
         when Hash
-          self.lines << InventoryAdjustmentInventory.new(lines)
+          inventory << CustomerAddressbook.new(attributes[:inventory])
         when Array
-          lines.each { |line| self.lines << InventoryAdjustmentInventory.new(line) }
+          attributes[:inventory].each { |inv| inventory << InventoryAdjustmentInventory.new(inv) }
         end
       end
 
-      def lines
-        @items ||= []
+      def inventory
+        @inventory ||= []
       end
 
       def to_record
-        { "#{record_namespace}:line" => lines.map(&:to_record) }
+        { "#{record_namespace}:inventory" => inventory.map(&:to_record) }
       end
 
 
