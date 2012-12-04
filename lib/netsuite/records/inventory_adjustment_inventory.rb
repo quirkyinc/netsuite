@@ -10,7 +10,7 @@ module NetSuite
         :bin_numbers, :serial_numbers, :new_quantity, :unit_cost,
         :foreign_currency_unit_cost, :memo, :currency, :expiration_date, :exchange_rate
 
-      record_refs :inventory_detail, :location, :units
+      record_refs :item, :inventory_detail, :location, :units
 
       def initialize(attributes = {})
         initialize_from_attributes_hash(attributes)
